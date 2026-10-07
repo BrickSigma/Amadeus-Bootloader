@@ -15,6 +15,13 @@ add_subdirectory(boot)
 # Add the common libraries folder (for architecture independent items)
 add_subdirectory(common)
 
+if (${SYSTEM_FIRMWARE} STREQUAL "BIOS")
+    # If we're building for BIOS, add the BIOS folder
+    add_subdirectory(bios)
+else()
+    # TODO: Later on add a UEFI directory for UEFI specific functions
+endif()
+
 set(OUTPUT_IMG "${CMAKE_BINARY_DIR}/Amadeus.iso")
 
 # Copy the bootloader binary file
