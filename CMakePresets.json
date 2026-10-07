@@ -6,23 +6,25 @@
     },
     "configurePresets": [
         {
-            "name": "i686-debug",
-            "description": "Debug build for i686 architecture",
+            "name": "bios-debug",
+            "description": "Debug build for BIOS PC systems",
             "binaryDir": "${sourceDir}/build",
             "generator": "Unix Makefiles",
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "toolchain.cmake",
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_TOOLCHAIN_FILE": "toolchains/bios.toolchain.cmake",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "SYSTEM_FIRMWARE": "BIOS"
             }
         },
         {
-            "name": "i686-release",
-            "description": "Release build for i686 architecture",
+            "name": "bios-release",
+            "description": "Release build for BIOS PC systems",
             "binaryDir": "${sourceDir}/release",
             "generator": "Unix Makefiles",
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "toolchain.cmake",
-                "CMAKE_BUILD_TYPE": "Release"
+                "CMAKE_TOOLCHAIN_FILE": "toolchains/bios.toolchain.cmake",
+                "CMAKE_BUILD_TYPE": "Release",
+                "SYSTEM_FIRMWARE": "BIOS"
             }
         }
     ]
