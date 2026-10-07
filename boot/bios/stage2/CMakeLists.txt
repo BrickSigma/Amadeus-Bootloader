@@ -11,7 +11,6 @@ set_target_properties(SecondStageBootloader PROPERTIES SUFFIX ".elf")
 target_sources(SecondStageBootloader
     PRIVATE
         second_stage.S
-        bootloader.c
 )
 
 # Compiler options
@@ -29,9 +28,10 @@ target_include_directories(SecondStageBootloader
 # Linker options
 target_link_libraries(SecondStageBootloader 
     PRIVATE
-        interrupts
+        bootloader
         bios_interface
         disk_driver
+        interrupts
         vga_driver
 )
 

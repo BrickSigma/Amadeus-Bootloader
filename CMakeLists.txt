@@ -11,11 +11,14 @@ enable_language(ASM)
 
 option(FIRMWARE_IS_BIOS "Builds the BIOS compatible version of the bootloader" ON)
 
-# Add the bootloader
+# Add the bootloader's startup library
 add_subdirectory(boot)
 
 # Add the common libraries folder (for architecture independent items)
 add_subdirectory(common)
+
+# Add the actual bootloader folder containing the code for the core of it
+add_subdirectory(core)
 
 # Add the drivers folder/libraries
 add_subdirectory(drivers)
