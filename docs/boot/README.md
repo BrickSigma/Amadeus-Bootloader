@@ -1,10 +1,7 @@
-# SteinerOS Bootloader Documentation
+# Amadeus Bootloader Documentation
 This is the documentation for the bootloader for SteinerOS.  
 
-> [!IMPORTANT]  
-> I'm still developing the bootloader for SteinerOS, therefore this document is subjected to change in the future. Kindly keep that in mind!
-
-The bootloader is designed to support both BIOS and UEFI in mind, allowing it to boot the operating system on both legacy and modern computers. This has a direct impact on the structure of the bootloader folder, which is discussed further below.
+The bootloader is designed to support both BIOS and UEFI in mind, allowing it to boot an operating system on both legacy and modern computers. This has a direct impact on the structure of the bootloader folder, which is discussed further below.
 
 ## Contents
 - [Bootloader Requirements](#bootloader-requirements)
@@ -34,7 +31,7 @@ boot/
 ## How the Bootloader Works
 This section describes how the bootloader works in detail. As mentioned above, it is designed to support both BIOS and UEFI systems in mind, therefore the bootloader code is split between the two using the folder structure drawn above.
 
-Regardless of the system the OS is booted from, both the BIOS and UEFI bootloaders run in the same order of tasks:  
+Regardless of the system an OS is booted from, both the BIOS and UEFI bootloaders run in the same order of tasks:  
 1.  Use a disk driver to find the kernel file on disk and load the Multiboot header into RAM,
 2. Parse the Multiboot header and flags,
 3. Initialize the system according the Multiboot flags, such as setting the video mode,
