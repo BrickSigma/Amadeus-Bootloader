@@ -1,1 +1,5 @@
-add_subdirectory(bios)
+if(FIRMWARE_IS_BIOS)
+    add_subdirectory(bios)
+else()
+    message(FATAL_ERROR "UEFI startup application not implemented yet!")
+endif()

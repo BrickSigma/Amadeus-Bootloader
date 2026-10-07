@@ -13,7 +13,7 @@
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": "toolchains/bios.toolchain.cmake",
                 "CMAKE_BUILD_TYPE": "Debug",
-                "SYSTEM_FIRMWARE": "BIOS"
+                "FIRMWARE_IS_BIOS": "ON"
             }
         },
         {
@@ -24,7 +24,29 @@
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": "toolchains/bios.toolchain.cmake",
                 "CMAKE_BUILD_TYPE": "Release",
-                "SYSTEM_FIRMWARE": "BIOS"
+                "FIRMWARE_IS_BIOS": "ON"
+            }
+        },
+        {
+            "name": "uefi-debug",
+            "description": "Debug build for UEFI PC systems",
+            "binaryDir": "${sourceDir}/uefi-build",
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "toolchains/bios.toolchain.cmake",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "FIRMWARE_IS_BIOS": "OFF"
+            }
+        },
+        {
+            "name": "uefi-release",
+            "description": "Release build for UEFI PC systems",
+            "binaryDir": "${sourceDir}/uefi-release",
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "toolchains/bios.toolchain.cmake",
+                "CMAKE_BUILD_TYPE": "Release",
+                "FIRMWARE_IS_BIOS": "OFF"
             }
         }
     ]

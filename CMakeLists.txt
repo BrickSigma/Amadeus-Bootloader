@@ -9,17 +9,22 @@ project(Amadeus
 
 enable_language(ASM)
 
+option(FIRMWARE_IS_BIOS "Builds the BIOS compatible version of the bootloader" ON)
+
 # Add the bootloader
 add_subdirectory(boot)
 
 # Add the common libraries folder (for architecture independent items)
 add_subdirectory(common)
 
-if (${SYSTEM_FIRMWARE} STREQUAL "BIOS")
+# Add the drivers folder/libraries
+add_subdirectory(drivers)
+
+if (FIRMWARE_IS_BIOS)
     # If we're building for BIOS, add the BIOS folder
     add_subdirectory(bios)
 else()
-    # TODO: Later on add a UEFI directory for UEFI specific functions
+    message(FATAL_ERROR "UEFI code not implemented yet!")
 endif()
 
 set(OUTPUT_IMG "${CMAKE_BINARY_DIR}/Amadeus.iso")

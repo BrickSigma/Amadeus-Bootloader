@@ -21,7 +21,7 @@ target_sources(interrupts
 target_link_libraries(interrupts
     PRIVATE
         asm
-        bios_vga
+        vga_driver
 )
 
 # Compiler options
