@@ -1,12 +1,11 @@
-# SteinerOS
-SteinerOS is a hobby operating systems project targeting the x86/i686 architecture, with the (eventual) goal of becoming a 32-bit kernel with it's own bootloader, ring 3 userspace applications, and a UNIX/POSIX system.
+# Amadeus Bootloader
+Amadeus is a custom bootloader (currently in development) designed to be compliant with the Multiboot 2 standard and support both BIOS and UEFI PC systems.
 
 ## Contents
 - [Building and Running](#building-and-running)
 - [Project Roadmap](#project-roadmap)
 - [Documentation](#documentation)
-- [Release Archives](#release-archives)
-- [How SteinerOS was Started](#how-steineros-was-started)
+- [How Amadeus was Started](#how-steineros-was-started)
 - [Resources and References](#resources-and-references)
 - [AI Usage Disclaimer](#ai-usage-disclaimer)
 - [Final Words](#final-words)
@@ -17,11 +16,11 @@ Before building, you'll need to setup a cross-compiler to build the project. The
 The project uses [CMake](https://cmake.org) as it's build system over the standard UNIX Makefile used in most OSDev projects. I've setup a CMake presets file ([CMakePresets.json](CMakePresets.json)) to make the build process easier. To build the project, simply run the following in your terminal emulator:
 
 ```bash
-cmake --preset i686
+cmake --preset i686-debug  # or use i686-release for a release build
 cmake --build build
 ```
 
-There is also a `run` target added in the build process to quickly launch the OS in QEMU:
+There is also a `run` target added in the build process to quickly launch the bootloader ISO in QEMU:
 
 ```bash
 cmake --build build --target run
@@ -40,31 +39,19 @@ cmake --build build --target clean
 ## Project Roadmap
 Below is a rough outline of the roadmap I'm following for now:
 
-- [ ] Create a custom multiboot compatible bootloader,
-    - [x] Setup a first and second stage bootloader,
-    - [x] Setup protected mode (GDT, IDT, A20 line, etc...),
-    - [ ] Create some simple drivers (ATA, PCI, VGA, etc...) to load the kernel,
-    - [ ] Build an ELF file parser to jump to the kernel,
-- [ ] Load the C kernel from the bootloader,
-- [ ] Setup paging, IDT, and other essential features,
-- [ ] Setup a ring 3 userspace with a minimal BASH terminal
+- [x] Setup a first and second stage bootloader,
+- [x] Setup protected mode (GDT, IDT, A20 line, etc...),
+- [ ] Create some simple drivers (disk, PIC, VGA, etc...),
+- [ ] Build an ELF file parser to load and jump to a kernel image
+- [ ] Port the BIOS code to UEFI
 
 ## Documentation
 The project documentation can be found within the [docs](docs/) folder. It is structured to match the folder layout of the source code, detailing the boot sequence, order of folders a new user can use to navigate the project, and further details about the roadmap and features being worked on.
 
-## Release Archives
-Under the releases page for the repo you can find previous milestones reached in this project. These serve as an archive of my progress and to save any interesting programs I make which are later removed.  
+## How Amadeus was Started
+Amadeus was created as part of a larger hobby operating system project I'm working on called [SteinerOS](https://github.com/BrickSigma/SteinerOS). The source code for the bootloader was originally part of SteinerOS's repository, however I've separated the two to make the projects more distinguishable. 
 
-### Previous Releases
-- [[v0.0.1] Pong bootloader](https://github.com/BrickSigma/SteinerOS/releases/tag/v0.0.1) - a simple remake of the classic game Pong that fits in the 512 bytes of the bootsector. This was done as an entry into the realm of 16-bit assembly programming and working with the BIOS, serving as an introduction to OSDev for myself.
-
-## How SteinerOS was Started
-I started working on SteinerOS for three main reasons:
-1. I'm bored of building CRUD mobile and web apps in university at the moment and want to do something more low level for a while,
-2. I wanted to learn more about computers and operating systems and how they work from the ground up, and
-3. OSDev is really fun and interesting!
-
-I've never done any form of operating system development before, so this'll be a difficult challenge, and I'm hoping to track the progression of this project through this repository as it progresses over time (which could either be weeks, months, or years!) (EDIT: It's been well over a year since I started and I'm only now jumping into protected mode).
+Much like how SteinerOS was named after the popular visual novel and anime series **Steins;Gate**, Amadeus is named after the virtual AI avatar program from the show, while also taking inspiration from the fictional origins of the story of the famous musician and composer *Wolfgang Amadeus Mozart* and his collegue *Antonio Salieri*.
 
 ## Resources and References
 One of the most important parts about OS Dev is finding the right resources and sites to start out. Obviously there is the [OSDev Wiki](https://wiki.osdev.org) which has a surplus of documentation and tutorials to follow. I've created a list of some of the links I'll be using for this project in case anyone is curious:
