@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.23)
 
-project(SteinerOS 
+project(Amadeus 
     VERSION 0.0.2
-    DESCRIPTION "A custom x86 operating system and bootloader written in C and Assembly"
-    HOMEPAGE_URL https://github.com/BrickSigma/SteinerOS
+    DESCRIPTION "A custom Multiboot 2 compliant bootloader for BIOS and UEFI systems"
+    HOMEPAGE_URL https://github.com/BrickSigma/Amadeus-Bootloader
     LANGUAGES ASM C
 )
 
@@ -15,19 +15,19 @@ add_subdirectory(boot)
 # Add the common libraries folder (for architecture independent items)
 add_subdirectory(common)
 
-set(OUTPUT_IMG "${CMAKE_BINARY_DIR}/SteinerOS.iso")
+set(OUTPUT_IMG "${CMAKE_BINARY_DIR}/Amadeus.iso")
 
 # Copy the bootloader binary file
-add_custom_target(SteinerOS ALL
-    COMMAND sh ${CMAKE_SOURCE_DIR}/cdrom.sh ${CMAKE_BINARY_DIR}
+add_custom_target(Amadeus ALL
+    COMMAND sh ${CMAKE_SOURCE_DIR}/cdrom.sh ${CMAKE_BINARY_DIR} ${OUTPUT_IMG}
 )
 
-add_dependencies(SteinerOS 
+add_dependencies(Amadeus 
     CD_Bootloader 
     SecondStageBootloader
 )
 
-set_target_properties(SteinerOS PROPERTIES
+set_target_properties(Amadeus PROPERTIES
     ADDITIONAL_CLEAN_FILES "${OUTPUT_IMG};${CMAKE_BINARY_DIR}/isodir"
 )
 

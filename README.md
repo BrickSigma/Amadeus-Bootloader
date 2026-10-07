@@ -5,7 +5,7 @@ Amadeus is a custom bootloader (currently in development) designed to be complia
 - [Building and Running](#building-and-running)
 - [Project Roadmap](#project-roadmap)
 - [Documentation](#documentation)
-- [How Amadeus was Started](#how-steineros-was-started)
+- [How Amadeus was Started](#how-amadeus-was-started)
 - [Resources and References](#resources-and-references)
 - [AI Usage Disclaimer](#ai-usage-disclaimer)
 - [Final Words](#final-words)
@@ -64,11 +64,11 @@ One of the most important parts about OS Dev is finding the right resources and 
 
 ## AI Usage Disclaimer
 > [!IMPORTANT]  
-> **ABSOLUTELY NO AI WAS USED TO GENERATE CODE FOR STEINEROS**
+> **ABSOLUTELY NO AI WAS USED TO GENERATE CODE FOR AMADEUS**
 
 While AI has become a major part of programming in the last few years, it removes the essence of programming as a hobby in my opinion. The thrill of writing code, facing a wall of compilation errors and the screen freezing up, reading pages of old manuals, and the overwhelming joy of finally seeing your project boot is something AI can never replace. Therefore this project is strictly against the use of AI assisted tools for code generation: every line of code has been written by a human being behind the keyboard.
 
-There is only **one** exception to the use of AI in SteinerOS: as a search engine assistant for locating resources on specific problems or topics that websites like the OSDev Wiki, StackOverFlow, Reddit and Discord forums, cannot find or assist with. This includes searching for the IBM manuals and understanding which sections are relevant or not, breaking down OS concepts from existing textbooks and sources, comparing ways of structuring the project, and any other theory-related research. Beyond acting as a search engine when the resources and sites listed above have been searched exhaustively, no form of AI content or code is present in the code base.
+There is only **one** exception to the use of AI in Amadeus: as a search engine assistant for locating resources on specific problems or topics that websites like the OSDev Wiki, StackOverFlow, Reddit and Discord forums, cannot find or assist with. This includes searching for the IBM manuals and understanding which sections are relevant or not, breaking down OS concepts from existing textbooks and sources, comparing ways of structuring the project, and any other theory-related research. Beyond acting as a search engine when the resources and sites listed above have been searched exhaustively, no form of AI content or code is present in the code base.
 
 ## Final Words
 This is one of the most complex and interesting projects I (and probably for anyone who is a computer scientist) have undertaken, and it'll definitely change a lot as I learn more and get more ideas on how to do things correctly through trial and error.
