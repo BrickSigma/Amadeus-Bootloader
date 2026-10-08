@@ -1,0 +1,1 @@
+add_subdirectory(asm)  # Assembly interface for C

@@ -11,7 +11,10 @@ enable_language(ASM)
 
 option(FIRMWARE_IS_BIOS "Builds the BIOS compatible version of the bootloader" ON)
 
-# Add the bootloader's startup library
+# Add the architecture folder, which will select libraries based on the value of CMAKE_SYSTEM_PROCESSOR
+add_subdirectory(arch)
+
+# Add the bootloader's entry point application
 add_subdirectory(boot)
 
 # Add the common libraries folder (for architecture independent items)

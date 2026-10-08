@@ -1,6 +1,6 @@
 # Toolchain file for building the bootloader for BIOS PC systems
 set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR i686)
+set(CMAKE_SYSTEM_PROCESSOR x86)
 
 set(CROSS_PREFIX i686-elf-)
 
