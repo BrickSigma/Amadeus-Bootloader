@@ -30,6 +30,7 @@ target_link_libraries(SecondStageBootloader
     PRIVATE
         bootloader
         bios_interface
+        bios_utils
         disk_driver
         interrupts
         vga_driver
