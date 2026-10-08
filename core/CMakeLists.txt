@@ -3,6 +3,10 @@ add_library(bootloader STATIC)
 target_sources(bootloader
     PRIVATE
         bootloader.c
+    PUBLIC
+        FILE_SET HEADERS
+        FILES
+            bootloader.h
 )
 
 # Compiler options

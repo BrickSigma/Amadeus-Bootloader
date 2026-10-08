@@ -1,3 +1,5 @@
+#include "bootloader.h"
+
 #include <stddef.h>
 #include <stdint.h>
 
@@ -7,15 +9,6 @@
 #include "interrupts.h"
 #include "pic.h"
 
-typedef struct __attribute__((packed)) BootloaderArgs
-{
-    uint8_t boot_drive;
-    uint16_t bytes_per_sector;
-} BootloaderArgs;
-
-/**
- * Entrypoint to the bootloader C code
- */
 void bootloader_main(BootloaderArgs *args, void *ret)
 {
     (void)ret;

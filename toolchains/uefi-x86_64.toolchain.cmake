@@ -1,12 +1,12 @@
-# Toolchain file for building the bootloader for UEFI PC systems (yet to be properly configured, currently using BIOS toolchain setup)
-set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR x86)
+# Toolchain file for building the bootloader for UEFI 64-bit PC systems
+set(CMAKE_SYSTEM_NAME Windows)
+set(CMAKE_SYSTEM_PROCESSOR x86_64)
 
-set(CROSS_PREFIX i686-elf-)
+set(CROSS_PREFIX x86_64-w64-mingw32-)
 
 set(CMAKE_ASM_COMPILER   ${CROSS_PREFIX}gcc)
 set(CMAKE_C_COMPILER     ${CROSS_PREFIX}gcc)
-set(CMAKE_CXX_COMPILER   ${CROSS_PREFIX}g++)
+# set(CMAKE_CXX_COMPILER   ${CROSS_PREFIX}g++)  # C++ isn't being used for this project, so we can skip this
 set(CMAKE_LINKER         ${CROSS_PREFIX}ld)
 set(CMAKE_OBJCOPY        ${CROSS_PREFIX}objcopy)
 

@@ -1,0 +1,1 @@
+add_subdirectory(efi-data)  # Files related to GNU-EFI

@@ -31,3 +31,10 @@ CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
 */.cmake
+
+# Don't leave the Makefile out of the repo!
+!Makefile
+
+# Ignore all the cmake build and release folders
+*-build/
+*-release/

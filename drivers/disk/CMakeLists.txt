@@ -1,7 +1,7 @@
-# Compiler flags for C
-set(CFLAGS -std=gnu99 -ffreestanding -nostdlib -Wall -Wextra -mgeneral-regs-only)
-
 add_library(disk_driver STATIC)
+
+# Compiler options
+target_compile_options(disk_driver PRIVATE -std=gnu99 -ffreestanding -nostdlib -Wall -Wextra -mgeneral-regs-only)
 
 target_sources(disk_driver
     PUBLIC
@@ -14,11 +14,7 @@ if(FIRMWARE_IS_BIOS)
     target_sources(disk_driver PRIVATE bios/disk.c)
     target_link_libraries(disk_driver PRIVATE bios_interface)
 else()
-    message(FATAL_ERROR "UEFI disk driver not implemented yet!")
+    message("UEFI disk driver not implemented yet!")
+    target_sources(disk_driver PRIVATE bios/disk.c)
+    target_link_libraries(disk_driver PRIVATE bios_interface)
 endif()
-
-# Compiler options
-target_compile_options(disk_driver
-    PRIVATE
-        $<$<COMPILE_LANGUAGE:C>: ${CFLAGS}>
-)
