@@ -1,5 +1,6 @@
+# Toolchain file for building the bootloader for UEFI PC systems (yet to be properly configured, currently using BIOS toolchain setup)
 set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR i686)
+set(CMAKE_SYSTEM_PROCESSOR x86)
 
 set(CROSS_PREFIX i686-elf-)
 
@@ -15,7 +16,3 @@ set(CMAKE_FIND_ROOT_PATH ${CROSS_ROOT})
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
-
-set(CMAKE_ASM_FLAGS_RELEASE "")
-set(CMAKE_ASM_FLAGS_RELWITHDEBINFO "")
-set(CMAKE_ASM_FLAGS_MINSIZEREL "")

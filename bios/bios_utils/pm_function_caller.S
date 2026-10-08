@@ -17,6 +17,7 @@
  */
 
 .section .text
+.global pm_function_cb
 pm_function_cb:
     .code16
     pushal  // Save the registers (32-bit registers, not 16-bit)

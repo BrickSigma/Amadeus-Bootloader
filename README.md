@@ -16,7 +16,7 @@ Before building, you'll need to setup a cross-compiler to build the project. The
 The project uses [CMake](https://cmake.org) as it's build system over the standard UNIX Makefile used in most OSDev projects. I've setup a CMake presets file ([CMakePresets.json](CMakePresets.json)) to make the build process easier. To build the project, simply run the following in your terminal emulator:
 
 ```bash
-cmake --preset i686-debug  # or use i686-release for a release build
+cmake --preset bios-debug  # or use bios-release for a release build
 cmake --build build
 ```
 

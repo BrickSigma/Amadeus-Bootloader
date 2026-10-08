@@ -1,9 +1,4 @@
 // Second stage bootloader script file
-#include "gdt.S"
-#include "pm_function_caller.S"
-#include "a20.S"
-#include "nmi.S"
-
 .section .text.start
 .code16
 .global _start
@@ -74,31 +69,6 @@ A20_ENABLED_MSG: .ascii "A20 line enabled!\r\n"
 
 A20_ERROR_MSG: .ascii "Could not enable the A20 line!\r\n"
 .equ A20_ERROR_MSG_LEN, . - A20_ERROR_MSG
-
-
-// Utility function definitions
-// ============================
-.section .text
-
-/**
- * Teletext print function
- * 
- * Arguments:
- * SI - address to text to be printed
- * CX - length of text to print
- * 
- * Note: Both CX and SI's values are destroyed by this function, as well as the flags register
- */
-print:
-    pusha
-_print_loop:
-    movb $0x0e, %ah
-    movb (%si), %al
-    inc %si
-    int $0x10
-    loop _print_loop
-    popa
-    ret
 
 .code32
 .extern bootloader_main

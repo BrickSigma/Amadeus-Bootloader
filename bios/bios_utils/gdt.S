@@ -1,6 +1,7 @@
 .section .text
 // Global descriptor table related items
 // =====================================
+.global gdtr_descriptor
 gdtr_descriptor:
     gdt_size: .word gdt_end - gdt - 1
     gdt_offset: .int gdt
@@ -9,14 +10,14 @@ gdtr_descriptor:
 gdt:
     null_descriptor:
         .quad 0
-    kernel_code_segment:
+    pm_code_segment:
         .word 0xffff        // Limit (bits 0-15)
         .word 0x0           // Base (bits 0-15)
         .byte 0x0           // Base (bits 16-23)
         .byte 0x9a          // Access byte
         .byte 0b11001111    // Flags (0xc) + Limit (0xf)
         .byte 0x0           // Base (bits 24-31)
-    kernel_data_segment:
+    pm_data_segment:
         .word 0xffff        // Limit (bits 0-15)
         .word 0x0           // Base (bits 0-15)
         .byte 0x0           // Base (bits 16-23)

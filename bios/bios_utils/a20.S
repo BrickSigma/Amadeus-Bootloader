@@ -14,6 +14,7 @@
  * Sets AX=0 if the A20 line couldn't be enabled, and AX=1 if it was succesfully enabled.
  * Note: This does not preserve any registers or flags.
  */
+.global enable_a20
 enable_a20:
     cli  // Disable interrupts until done with routine
 

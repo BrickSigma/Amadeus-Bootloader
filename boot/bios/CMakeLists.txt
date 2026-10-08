@@ -1,6 +1,2 @@
 add_subdirectory(boot)
 add_subdirectory(stage2)
-add_subdirectory(interrupts)
-add_subdirectory(bios_interface)
-add_subdirectory(vga)
-add_subdirectory(disk)

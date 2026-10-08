@@ -18,7 +18,7 @@ mkdir -p ${CDROM_DIR}/BOOT
 cp ${BOOTLOADER} ${CDROM_DIR}/BOOT/BOOT.BIN
 cp ${SECOND_STAGE} ${CDROM_DIR}/BOOT/STAGE2.BIN
 
-xorriso -as mkisofs -o ${OUTPUT_IMG} -V AMADEUS \
+xorriso -as mkisofs -o ${OUTPUT_IMG} -V AMADEUS -R \
         -b BOOT/BOOT.BIN \
         -no-emul-boot \
         -boot-load-size 4 \
